@@ -462,6 +462,8 @@ a:active {
       height: 5px;
       position:relative;
       &:before {
+        content:'.';
+        display: block;
         position:absolute;
         width:50px;
         height: 5px;
@@ -470,6 +472,8 @@ a:active {
       }
 
       &:after {
+        content:'.';
+        display: block;
         position:absolute;
         width:50px;
         height: 5px;
