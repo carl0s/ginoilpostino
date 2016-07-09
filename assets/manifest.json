@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "jquery.js": {
+      "files": [
+        "scripts/jquery.js"
+      ],
+      "main": false
+    },
+    "app.js": {
+      "files": [
+        "scripts/app.js"
+      ],
+      "main": false
+    },
+    "app.css": {
+      "files": [
+        "styles/style.scss"
+      ],
+      "main": false
+    }
+  },
+  "config": {
+    "devUrl": "http://ginoilpostino.dev"
+  }
+}
