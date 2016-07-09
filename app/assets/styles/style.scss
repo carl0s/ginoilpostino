@@ -16,6 +16,9 @@ $light-grey: #CCC;
 
 @import "mixin";
 
+.hidden {
+  display: none;
+}
 
 @font-face {
   font-family: 'nlicons';
@@ -428,7 +431,7 @@ a:active {
 /* Main Content */
 .main {
   max-width: 75em;
-  margin-top:150px;
+  margin-top:100px;
 }
 
 
