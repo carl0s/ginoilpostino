@@ -451,8 +451,8 @@ a:active {
   position: relative;
   .overlay {
     position: absolute;
-    width:640px;
-    height: 480px;
+    width:320px;
+    height: 240px;
     top:0;
     left:0;
     z-index: 999999;
@@ -493,19 +493,23 @@ a:active {
     .left,
     .right {
       &:before {
+        content:'.';
+        display: block;
         position:absolute;
         height:50px;
         width: 5px;
-        color: green;
+        background-color: green;
         left:0;
         top:0
       }
 
       &:after {
+        content:'.';
+        display: block;
         position:absolute;
         height:50px;
         width:: 5px;
-        color: green;
+        background-color: green;
         right:0;
         top:0
       }
