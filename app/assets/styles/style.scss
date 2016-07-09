@@ -68,10 +68,6 @@ $light-grey: #CCC;
 }
 
 
-span {
-  @include transition(.2s);
-}
-
 /* normalize the input elements, make them look like everything else */
 
 /* custom field (drop-down, text element) styling  */
@@ -148,7 +144,7 @@ span {
 
 /* icons for some elements */
 .nl-dd ul li.nl-dd-checked:before,
-.nl-submit:before,
+.next-slide:before,
 .nl-field-go:before {
   font-family: 'nlicons';
   speak: none;
@@ -176,6 +172,16 @@ span {
   padding: 0.2em 2em 0.2em 0.5em;
   border-bottom: none;
   color: #fff;
+}
+
+.nl-form {
+  .choice {
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    color: $blue;
+  }
 }
 
 .nl-form .nl-field-go {
@@ -242,7 +248,7 @@ input:focus::-ms-input-placeholder {
 }
 
 /* submit button */
-.nl-submit-wrap {
+.next-slide-wrap {
   margin-top: 0.4em;
 }
 
@@ -255,21 +261,21 @@ input:focus::-ms-input-placeholder {
   font-weight: 700;
 }
 
-.nl-form .nl-submit {
-  line-height: 3;
+
+.next-slide {
+  position:absolute;
+  bottom: 40px;
+  right: 40px;
+  line-height: 24px;
   text-transform: uppercase;
   cursor: pointer;
-  position: relative;
   background: white;
   color: $blue;
   padding: 0 1em 0 0;
-  font-size: 40%;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 3px;
-  position:absolute;
   width:400px;
-  bottom: 40px;
-  right: 40px;
   border:2px solid $blue;
   height: 80px;
   @include transition(.2s); 
@@ -295,10 +301,11 @@ input:focus::-ms-input-placeholder {
   }
 }
 
-.nl-submit:after {
+.next-slide:after {
   @include transition(.2s);
   height: 76px;
   font-family:"nlicons";
+  line-height: 76px;
   content: "\e001";
   color: #fff;
   position:absolute;
@@ -309,12 +316,12 @@ input:focus::-ms-input-placeholder {
   background: $blue;
 }
 
-.no-touch .nl-form .nl-submit:hover,
-.no-touch .nl-form .nl-submit:active {
+.no-touch .nl-form .next-slide:hover,
+.no-touch .nl-form .next-slide:active {
   background: $yellow;
 }
 
-.no-touch .nl-form .nl-submit:hover:before {
+.no-touch .nl-form .next-slide:hover:before {
   background: $blue;
 }
 
@@ -394,6 +401,32 @@ a:active {
 
 .transition {
   opacity: 1;
+  @include transition(.5s);
+}
+
+.container {
+  width:100%;
+  position:relative;
+  min-height: 650px;
+
+  .slide {
+    position:absolute;
+    width:100%;
+    min-height: 650px;
+    background:white;
+    @include transition(0.5s);
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+      z-index:10;
+    }
+    &.inactive {
+      transform: scale(0);
+      opacity: 0;
+      z-index:0;
+    }
+  }
+
 }
 
 /* Header Style */
@@ -451,8 +484,8 @@ a:active {
   position: relative;
   .overlay {
     position: absolute;
-    width:320px;
-    height: 240px;
+    width:240px;
+    height: 320px;
     top:0;
     left:0;
     z-index: 999999;

@@ -29,37 +29,38 @@
 			</header>
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
-					Vorrei
-					<select id="service-options">
-						<option value="1" selected data-price="10">spedire</option>
-						<option value="2" data-price="104">pagare o prelevare</option>
+					Vorrei la consegna entro
+					<select id="service-options" data-service="shipping">
+						<option value="0" selected>(seleziona cosa)</option>
+						<option value="1" data-price="10">spedire</option>
+						<option value="2" data-price="104">pagare / versare</option>
 						<option value="3" data-price="12">aprire un conto</option>
 						<option value="4" data-price="22">investire in titoli</option>
-						<option value="5" data-price="122">investire in titoli</option>
 					</select>
-					<br>
-					<select id="item-options" class="hidden">
-						<option value="lettera_busta" selected>una lettera/busta</option>
-						<option value="raccomandata">una raccomandata</option>
-						<option value="pacco">un pacco</option>
-						<option value="telegramma">un telegramma</option>
-					</select>
-					verso 
-					<select id="country-options" class="hidden">
-						<option value="italia" selected>l'Italia</option>
-						<option value="romania">la Romania</option>
-						<option value="marocco">il Marocco</option>
-					</select>
-					<br>
-					con consegna entro
-					<select id="expiry-options" class="hidden">
-						<option value="1_4" selected>1 - 4 giorni</option>
-						<option value="4_6">4 - 6 giorni</option>
-					</select>
+					<span id="shipping" class="hidden">
+						<br>
+						<select id="item-options" class="hidden">
+							<option value="0" data-type="none" selected>(seleziona cosa)</option>
+							<option data-type="envelope" value="lettera_busta">una lettera/busta</option>
+							<option data-type="priority" value="raccomandata">una raccomandata</option>
+							<option data-type="package" value="pacco">un pacco</option>
+							<option data-type="telegram"value="telegramma" data-telegram="true">un telegramma</option>
+						</select>
+						<span id="country">
+						verso 
+						<select id="country-options" data-next="true" class="hidden">
+							<option value="0" selected>(dove)</option>
+							<option value="italia">l'Italia</option>
+							<option value="estero">l'Estero</option>
+						</select>
+	
+					</span>
 
 					<div class="nl-submit-wrap">
 						<div class="total">Totale: € <span></span></div>
-						<button class="nl-submit" class="hidden" type="submit">Avanti</button>
+						<div class="button-wrapper hidden">
+							<a href="" class="nl-submit" type="submit">Avanti</a>
+						</div>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>

@@ -68,7 +68,8 @@
 		_createDropDown : function() {
 			var self = this;
 			this.fld = document.createElement( 'div' );
-			this.fld.className = 'nl-field nl-dd';
+			this.fld.id = this.elOriginal.id;
+			this.fld.className = 'shipping-options nl-field nl-dd';
 			this.toggle = document.createElement( 'a' );
 			this.toggle.innerHTML = this.elOriginal.options[ this.elOriginal.selectedIndex ].innerHTML;
 			this.toggle.className = 'nl-field-toggle';
@@ -160,15 +161,14 @@
 					// remove class nl-dd-checked from previous option
 					var selectedopt = this.optionsList.children[ this.selectedIdx ];
 					selectedopt.className = '';
-					console.log(this.elOriginal.id);
+					$('footer.slide-1').find('button').attr('data-type', this.elOriginal.children[ this.selectedIdx ].dataset.type);
 					opt.className = 'nl-dd-checked';
 					opt.dataset.price = this.elOriginal.children[ this.selectedIdx ].dataset.price;
 					if(this.elOriginal.dataset.service === 'shipping') {
 						$('#shipping').toggleClass('hidden').addClass('transition');
 					} 
 					if(this.elOriginal.dataset.next === 'true') {
-						$('.button-wrapper').toggleClass('hidden').addClass('transition');;
-						$('.total').find('span').html(opt.dataset.price);						
+						$('footer').find('button').removeClass('hidden').addClass('transition');
 					}
 					this.toggle.innerHTML = opt.innerHTML;
 					// update selected index value
