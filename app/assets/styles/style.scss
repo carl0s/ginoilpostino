@@ -460,7 +460,7 @@ a:active {
     .bottom {
       width:100%;
       height: 5px;
-      position:relative;
+      position:absolute;
       &:before {
         content:'.';
         display: block;
@@ -492,6 +492,7 @@ a:active {
     
     .left,
     .right {
+      position: absolute;
       &:before {
         content:'.';
         display: block;
