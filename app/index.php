@@ -22,14 +22,44 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Cloud Vision API PHP Example</title>
-     <script src="js/webcam.js" type="text/javascript"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Gino il Postino - Servizi al Cittadino</title>
+    <meta name="description" content="Gino il Postino - Servizi al Cittadino" />
+    <meta name="keywords" content="Gino il Postino - Servizi al Cittadino" />
+    <meta name="author" content="Team #keeppushing" />
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
+    <script src="dist/scripts/modernizr.custom.js"></script>
+    <script src="dist/scripts/webcam.js" type="text/javascript"></script>
+
 </head>
+<<<<<<< HEAD
 <body style="margin:0">
     <div id="my_camera" style="width:320px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
     <div id="my_result" style="width:320px; height:240px; position:absolute; left:5px; top:5px; z-index:2"></div>
+=======
+<body class="nl-blurred">
+  <div class="container demo-1">
+    <!-- Top Navigation -->
+    <header>
+      <h1>Benvenuto a Gino il Postino</h1>
+      <div class="flag">
+        <div class="flag-item" data-lang="it"><img src="dist/images/italy.svg"></div>
+        <div class="flag-item" data-lang="de"><img src="dist/images/italy.svg"></div>
+        <select class="hidden">
+          <option value="it" selected></option>
+          <option value="de"></option>
+        </select>
+      </div>
+    </header>
+  <div class="camera">
+    <div id="my_camera" style="width:640px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
+    <div id="my_result"></div>
+  </div>
+>>>>>>> origin/master
     <script language="JavaScript">
         Webcam.attach( '#my_camera' );
 
@@ -51,7 +81,6 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 	var x = $('#photo').val();
 	var p = new Object;
 	p.img = x;
-	console.log(p);
 	var post = JSON.stringify(p);
 	$.ajax({
             url: '/process.php',
@@ -133,7 +162,12 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 <div style="position:absolute; bottom:25%">
 <a href="#" onClick="services()" style="">SERVICES</a>
 
+<<<<<<< HEAD
 <a href="#" onClick="postphoto()" style="">CHECK</a>
+=======
+
+<a href="#" onClick="postphoto()" style="position:absolute; bottom:0">CHECK</a>
+>>>>>>> origin/master
 </div>
 </body>
 </html>

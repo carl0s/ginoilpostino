@@ -1,0 +1,148 @@
+@mixin clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table; }
+  &:after {
+    clear: both; }
+}
+
+@mixin transition($time) {
+  transition: all $time ease-in-out;
+}
+
+@mixin transition-opacity($time) {
+  transition: opacity $time ease-in-out;
+}
+
+@mixin delay($time) {
+  transition-delay: $time;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin circle {
+  @include border-radius(50%);
+  overflow: hidden;
+}
+
+@mixin box-shadow($top, $left, $blur, $size, $color, $inset: false) {
+  @if $inset {
+    box-shadow:inset $top $left $blur $size $color;
+  } @else {
+    box-shadow: $top $left $blur $size $color;
+  }
+}
+
+@mixin origin($x, $y) {
+  transform-origin: $x $y;
+}
+
+@mixin rotate($deg) {
+  transform: rotate($deg);
+}
+
+@mixin scale($scale) {
+  transform: scale($scale);
+}
+
+@mixin rotate-scale($deg, $scale) {
+  transform: rotate($deg) scale($scale);
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+}
+
+@mixin rotate-translate($deg, $x, $y) {
+  transform: rotate($deg) translate($x, $y);
+}
+
+@mixin cover {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@mixin contain {
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin vertical-align-absolute {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@mixin remove-vertical-align {
+  position: relative;
+  top: initial;
+  transform: translate(0, 0);
+}
+
+@mixin content-box {
+  background-clip: content-box;
+}
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin gradient-cover {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.4);
+    background: linear-gradient(-180deg, rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.20) 62%, rgba(0,0,0,0.80) 100%);
+    opacity: 1;
+    @include transition(.3s);
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.8);
+    background: linear-gradient(-180deg, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.80) 62%, rgba(0,0,0,0.80) 100%);
+    opacity: 0;
+    @include transition(.3s);
+  }
+}
+
+@mixin gradient-cover-hover {
+  position: relative;
+  &:before {
+    opacity: 0;
+  }
+  &:after {
+    opacity: 1;
+  }
+}
+
+@mixin shadow-1 {
+  @include box-shadow(0, 1px, 2px, 0, rgba(0,0,0,.5));
+}
+
+@mixin shadow-2 {
+  @include box-shadow(0, 5px, 10px, 0, rgba(0,0,0,.5));
+}

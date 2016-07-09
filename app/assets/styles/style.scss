@@ -14,6 +14,11 @@ $light-grey: #CCC;
   text-shadow: none;
 }
 
+@import "mixin";
+
+.hidden {
+  display: none;
+}
 
 @font-face {
   font-family: 'nlicons';
@@ -61,6 +66,8 @@ $light-grey: #CCC;
 }
 
 
+
+
 /* normalize the input elements, make them look like everything else */
 
 /* custom field (drop-down, text element) styling  */
@@ -88,7 +95,7 @@ $light-grey: #CCC;
 .nl-field ul {
   position: absolute;
   visibility: hidden;
-  background: #76C3BD;
+  background: $blue;
   left: -0.5em;
   top: 50%;
   font-size: 80%;
@@ -124,7 +131,7 @@ $light-grey: #CCC;
 }
 
 .nl-dd ul li.nl-dd-checked {
-  color: #478982;
+  color: $yellow;
 }
 
 .no-touch .nl-dd ul li:hover {
@@ -235,13 +242,22 @@ input:focus::-ms-input-placeholder {
   margin-top: 0.4em;
 }
 
+.nl-form .total {
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  font-size: 32px;
+  color: $blue;
+  font-weight: 700;
+}
+
 .nl-form .nl-submit {
   line-height: 3;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
-  background: $blue;
-  color: #fff;
+  background: white;
+  color: $blue;
   padding: 0 1em 0 0;
   font-size: 40%;
   font-weight: bold;
@@ -250,9 +266,30 @@ input:focus::-ms-input-placeholder {
   width:400px;
   bottom: 40px;
   right: 40px;
+  border:2px solid $blue;
+  height: 80px;
+  @include transition(.2s); 
+  &:hover {
+    background:$blue;
+    color:white;
+    &:after {
+      height: 76px;
+      font-family:"nlicons";
+      content: "\e001";
+      color: $blue;
+      position:absolute;
+      top:0;
+      right:0;
+      padding: 0 0.7em;
+      margin: 0 0 0 0;
+      background: $white;
+    }
+  }
 }
 
 .nl-submit:after {
+  @include transition(.2s);
+  height: 76px;
   font-family:"nlicons";
   content: "\e001";
   color: #fff;
@@ -261,7 +298,7 @@ input:focus::-ms-input-placeholder {
   right:0;
   padding: 0 0.7em;
   margin: 0 0 0 0;
-  background: $yellow;
+  background: $blue;
 }
 
 .no-touch .nl-form .nl-submit:hover,
@@ -362,8 +399,19 @@ a:active {
 
   .flag {
     position:absolute;
-    right:20px;
-    top:10px;
+    right:40px;
+    top:40px;
+    height: 40px;
+    overflow: hidden;
+    border:2px solid white;
+    img {
+      width: auto;
+      height: 40px;
+      &.active {
+        border:2px solid white;
+      }
+    }
+    
   }
 
   h1 {
@@ -383,7 +431,7 @@ a:active {
 /* Main Content */
 .main {
   max-width: 75em;
-  margin-top:150px;
+  margin-top:100px;
 }
 
 
