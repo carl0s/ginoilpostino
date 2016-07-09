@@ -160,9 +160,16 @@
 					// remove class nl-dd-checked from previous option
 					var selectedopt = this.optionsList.children[ this.selectedIdx ];
 					selectedopt.className = '';
+					console.log(this.elOriginal.id);
 					opt.className = 'nl-dd-checked';
 					opt.dataset.price = this.elOriginal.children[ this.selectedIdx ].dataset.price;
-					$('.total').find('span').html(opt.dataset.price);
+					if(this.elOriginal.dataset.service === 'shipping') {
+						$('#shipping').toggleClass('hidden').addClass('transition');
+					} 
+					if(this.elOriginal.dataset.next === 'true') {
+						$('.button-wrapper').toggleClass('hidden').addClass('transition');;
+						$('.total').find('span').html(opt.dataset.price);						
+					}
 					this.toggle.innerHTML = opt.innerHTML;
 					// update selected index value
 					this.selectedIdx = idx;

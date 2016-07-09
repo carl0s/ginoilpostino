@@ -18,6 +18,8 @@ $light-grey: #CCC;
 
 .hidden {
   display: none;
+  opacity: 0;
+  @include transition(.2s);
 }
 
 @font-face {
@@ -66,7 +68,9 @@ $light-grey: #CCC;
 }
 
 
-
+span {
+  @include transition(.2s);
+}
 
 /* normalize the input elements, make them look like everything else */
 
@@ -285,6 +289,10 @@ input:focus::-ms-input-placeholder {
       background: $white;
     }
   }
+  &.active {
+    background:$yellow;
+    color: $blue;
+  }
 }
 
 .nl-submit:after {
@@ -384,6 +392,10 @@ a:active {
   color: #333;
 }
 
+.transition {
+  opacity: 1;
+}
+
 /* Header Style */
 .main,
 .container > header {
@@ -430,10 +442,65 @@ a:active {
 
 /* Main Content */
 .main {
-  max-width: 75em;
-  margin-top:100px;
+  max-width: 100em;
+  margin-top:50px;
 }
 
+
+.camera {
+  .overlay {
+    z-index: 999999;
+    .top,
+    .bottom {
+      width:100%;
+      height: 5px;
+      &:before {
+        position:absolute;
+        width:50px;
+        height: 5px;
+        color: green;
+        left:0;
+      }
+
+      &:after {
+        position:absolute;
+        width:50px;
+        height: 5px;
+        color: green;
+        right:0;
+      }
+    }
+
+    .top {
+      top:0;
+    }
+
+    .bottom {
+      bottom:0;
+    }
+    
+    .left,
+    .right {
+      &:before {
+        position:absolute;
+        height:50px;
+        width: 5px;
+        color: green;
+        left:0;
+        top:0
+      }
+
+      &:after {
+        position:absolute;
+        height:50px;
+        width:: 5px;
+        color: green;
+        right:0;
+        top:0
+      }
+    }
+  }
+}
 
 .codrops-icon:before {
   font-family: 'codropsicons';
