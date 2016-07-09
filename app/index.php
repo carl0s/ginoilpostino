@@ -34,6 +34,17 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
     <script src="dist/scripts/modernizr.custom.js"></script>
     <script src="dist/scripts/webcamjs/webcam.js" type="text/javascript"></script>
+    <script src="dist/scripts/trackingjs/build/tracking.js" type="text/javascript"></script>
+
+    <style>
+  .rect {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: -1000px;
+    top: -1000px;
+  }
+  </style>
 
 </head>
 
@@ -52,6 +63,8 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
       </div>
     </header>
   <div class="camera">
+  		<div id="sel"></div>
+
     <div id="my_camera" style="width:640px; height:240px; margin: 20px auto;"></div>
 	<div class="overlay" style="top: calc(50% - 120px);left: calc(50% - 160px);">
     	<div class="top"></div>
@@ -74,9 +87,10 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 	
         Webcam.attach( '#my_camera' );
 
+
         var take_snapshot = function () {
             Webcam.snap( function(data_uri) {
-                document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
+             document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
 				
 				var img = data_uri.slice(23);
 				document.getElementById('photo').value = img;
@@ -88,6 +102,11 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 		
 	
 	var postphoto = function(){
+	var h ='';
+	var n='';
+	var b='';
+	var servizio = '';
+	var today = '';
 	take_snapshot();
 	var x = $('#photo').val();
 	var p = new Object;
@@ -110,11 +129,13 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 					if(y.length===3 && !isNaN(y)){
 						
 						console.log('numerino ' + y);
+						var n = y;	
+
 						
 						
 						}
 					if (patt.test(y)){
-						
+						var h = y;
 						console.log(y);
 						
 						}
@@ -154,6 +175,8 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 					servizio = 'P'
 					}		
 				console.log(servizio);
+			if(h !=='' && n !=='' && b !=='' && servizio !=='' && today !==''){console.log('DAICAZZO');}else{console.log('FANCULO');}
+
             },
 			error: function(e) {
 				console.log(e);
@@ -170,10 +193,8 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
  <!--<a href="javascript:void(take_snapshot())">Take Snapshot</a>-->
 <input type="hidden" id="photo">
 <input type="hidden" id="v">
-<div style="position:absolute; bottom:25%">
-
-<a href="#" onClick="postphoto()" style="">CHECK</a>
-
-</div>
+<button class="next-slide" style="text-align:center; background-color:#0047bb; width: 640px; height:60px; line-height:60px; margin:auto; " onClick="postphoto()">
+CHECK
+</button>
 </body>
 </html>
