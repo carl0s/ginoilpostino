@@ -448,7 +448,13 @@ a:active {
 
 
 .camera {
+  position: relative;
   .overlay {
+    position: absolute;
+    width:640px;
+    height: 480px;
+    top:0;
+    left:0;
     z-index: 999999;
     .top,
     .bottom {
