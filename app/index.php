@@ -102,9 +102,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 		
 	
 	var postphoto = function(){
-	var h ='';
-	var n='';
-	var b='';
+
 	var servizio = '';
 	var today = '';
 	take_snapshot();
@@ -118,6 +116,9 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
             data: post,
             dataType: 'json',
             success: function(data,status){
+            	var n = '';
+            	var h = '';
+            	var b = '';
                 console.log(data);
 				console.log(data.responses[0].textAnnotations.length)
 				var x = data.responses[0].textAnnotations.length;
@@ -143,7 +144,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 					
 					}
 				var u = x - 1;
-				var b = data.responses[0].textAnnotations[u].description
+				if(!isNaN(data.responses[0].textAnnotations[u].description)){b = data.responses[0].textAnnotations[u].description};
 				console.log('Utenti attesa:' + b);
 				
 				 var today = new Date();
@@ -175,7 +176,17 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 					servizio = 'P'
 					}		
 				console.log(servizio);
-			if(h !=='' && n !=='' && b !=='' && servizio !=='' && today !==''){console.log('DAICAZZO');}else{console.log('FANCULO');}
+			if(h !=='' && n !=='' && b !=='' && servizio !=='' && today !==''){
+	console.log(n)
+
+
+				console.log('DAICAZZO');
+			}else{
+
+				console.log('FANCULO');
+				$('img').removeAttr('src');
+
+			}
 
             },
 			error: function(e) {
@@ -193,8 +204,10 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
  <!--<a href="javascript:void(take_snapshot())">Take Snapshot</a>-->
 <input type="hidden" id="photo">
 <input type="hidden" id="v">
-<button class="next-slide" style="text-align:center; background-color:#0047bb; width: 640px; height:60px; line-height:60px; margin:auto; " onClick="postphoto()">
+<center>
+<button class="next-slide" style="text-align:center; background-color:#0047bb; width: 640px; height:60px; color:#fff; margin:auto; " onClick="postphoto()">
 CHECK
 </button>
+</center>
 </body>
 </html>
