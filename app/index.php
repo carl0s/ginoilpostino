@@ -54,8 +54,10 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
   <div class="camera">
     <div id="my_camera" style="width:640px; height:240px; margin: 20px auto;"></div>
 	<div class="overlay">
-    	<div class="top">
-        </div>
+    	<div class="top"></div>
+    	<div class="bottom"></div>
+    	<div class="left"></div>
+    	<div class="right"></div>
     </div>
     <div id="my_result"></div>
   </div>
