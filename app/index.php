@@ -33,7 +33,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <link rel="shortcut icon" href="../favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
     <script src="dist/scripts/modernizr.custom.js"></script>
-    <script src="dist/scripts/webcam.js" type="text/javascript"></script>
+    <script src="dist/scripts/webcamjs/webcam.js" type="text/javascript"></script>
 
 </head>
 
