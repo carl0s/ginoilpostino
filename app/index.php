@@ -27,14 +27,13 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
      <script src="js/webcam.js" type="text/javascript"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 </head>
-<body>
-
-    <div id="my_camera" style="width:320px; height:240px;"></div>
+<body style="margin:0">
+    <div id="my_camera" style="width:320px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
     <div id="my_result"></div>
     <script language="JavaScript">
         Webcam.attach( '#my_camera' );
 
-        function take_snapshot() {
+        var take_snapshot = function () {
             Webcam.snap( function(data_uri) {
                 document.getElementById('my_result').innerHTML = '<img src="'+data_uri+'"/>';
 				
@@ -48,7 +47,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 		
 	
 	var postphoto = function(){
-		
+	take_snapshot();
 	var x = $('#photo').val();
 	var p = new Object;
 	p.img = x;
@@ -72,12 +71,10 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 		
     </script>
 
-    <a href="javascript:void(take_snapshot())">Take Snapshot</a>
+ <!--<a href="javascript:void(take_snapshot())">Take Snapshot</a>-->
 <input type="hidden" id="photo">
 
 
-YOLO
-
-<a href="#" onClick="postphoto()">CHECK</a>
+<a href="#" onClick="postphoto()" style="position:absolute; bottom:0">CHECK</a>
 </body>
 </html>
