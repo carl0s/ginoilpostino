@@ -36,11 +36,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <script src="dist/scripts/webcam.js" type="text/javascript"></script>
 
 </head>
-<<<<<<< HEAD
-<body style="margin:0">
-    <div id="my_camera" style="width:320px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
-    <div id="my_result" style="width:320px; height:240px; position:absolute; left:5px; top:5px; z-index:2"></div>
-=======
+
 <body class="nl-blurred">
   <div class="container demo-1">
     <!-- Top Navigation -->
@@ -59,7 +55,6 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <div id="my_camera" style="width:640px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
     <div id="my_result"></div>
   </div>
->>>>>>> origin/master
     <script language="JavaScript">
         Webcam.attach( '#my_camera' );
 
@@ -160,14 +155,9 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 <input type="hidden" id="photo">
 <input type="hidden" id="v">
 <div style="position:absolute; bottom:25%">
-<a href="#" onClick="services()" style="">SERVICES</a>
 
-<<<<<<< HEAD
 <a href="#" onClick="postphoto()" style="">CHECK</a>
-=======
 
-<a href="#" onClick="postphoto()" style="position:absolute; bottom:0">CHECK</a>
->>>>>>> origin/master
 </div>
 </body>
 </html>

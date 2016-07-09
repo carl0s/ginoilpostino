@@ -21,8 +21,8 @@ handlers:
 
 # Needed for static image files
 
-- url: /js
-  static_dir: js
+- url: /dist
+  static_dir: dist
 
 - url: /
   script: index.php
