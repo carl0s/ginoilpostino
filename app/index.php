@@ -52,10 +52,20 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
       </div>
     </header>
   <div class="camera">
-    <div id="my_camera" style="width:640px; height:240px; position:absolute; left:5px; top:5px; z-index:1"></div>
+    <div id="my_camera" style="width:640px; height:240px; position:absolute; left: calc(50% - 320px);top: calc(50% - 200px); z-index:1"></div>
     <div id="my_result"></div>
   </div>
     <script language="JavaScript">
+	
+	Webcam.set({
+        width: 640,
+        height: 480,
+        image_format: 'jpeg',
+        jpeg_quality: 90,
+        force_flash: false
+    });
+	
+	
         Webcam.attach( '#my_camera' );
 
         var take_snapshot = function () {
