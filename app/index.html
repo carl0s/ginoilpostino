@@ -4,13 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<title>Natural Language Form</title>
-		<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
-		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
-		<meta name="author" content="Codrops" />
+		<title>Gino il Postino - Servizi al Cittadino</title>
+		<meta name="description" content="Gino il Postino - Servizi al Cittadino" />
+		<meta name="keywords" content="Gino il Postino - Servizi al Cittadino" />
+		<meta name="author" content="Team #keeppushing" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
 		<script src="js/modernizr.custom.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	</head>
 	<body class="nl-blurred">
 		<div class="container demo-1">
@@ -18,31 +19,33 @@
 			<header>
 				<h1>Benvenuto a Gino il Postino</h1>
 				<div class="flag">
-					<select>
-						<option value="1" selected>IT</option>
-						<option value="2">EN</option>
-						<option value="3">FR</option>
+					<div class="flag-item" data-lang="it"><img src="dist/images/italy.svg"></div>
+					<div class="flag-item" data-lang="de"><img src="dist/images/italy.svg"></div>
+					<select class="hidden">
+						<option value="it" selected></option>
+						<option value="de"></option>
 					</select>
 				</div>
 			</header>
 			<div class="main clearfix">
 				<form id="nl-form" class="nl-form">
 					Vorrei
-					<select>
-						<option value="1" selected>spedire</option>
-						<option value="2">pagare o prelevare</option>
-						<option value="3">aprire un conto</option>
-						<option value="4">investire in titoli</option>
-						<option value="5">investire in titoli</option>
+					<select id="service-options">
+						<option value="1" selected data-price="10">spedire</option>
+						<option value="2" data-price="104">pagare o prelevare</option>
+						<option value="3" data-price="12">aprire un conto</option>
+						<option value="4" data-price="22">investire in titoli</option>
+						<option value="5" data-price="122">investire in titoli</option>
 					</select>
 					<div class="nl-submit-wrap">
+						<div class="total">Totale: € <span></span></div>
 						<button class="nl-submit" type="submit">Avanti</button>
 					</div>
 					<div class="nl-overlay"></div>
 				</form>
 			</div>
 		</div><!-- /container -->
-		<script src="js/nlform.js"></script>
+		<script src="dist/scripts/nlform.js"></script>
 		<script>
 			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
 		</script>
