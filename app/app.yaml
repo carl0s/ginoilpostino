@@ -29,6 +29,9 @@ handlers:
 
 - url: /process.php
   script: process.php
-  
+
+- url: /cosa.html
+  script: cosa.html
+
 - url: /api.php
   script: api.php
