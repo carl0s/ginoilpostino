@@ -30,15 +30,21 @@
 			</header>
 			<div class="content">
 				<div class="left">
-					<h2>Benvenuto nell'Ufficio Postale di Andria</h2>
+					<h2>Benvenuto nell'Ufficio Postale<br> di Andria</h2>
 					<div class="text">
-						Dì a PosteChiare di quale servizio hai bisogno, <strong>precompila i moduli</strong>, inviali allo sportello e <strong>risparmia tempo</strong>
+						Dì a PosteChiare di quale servizio hai bisogno, <strong>precompila i moduli</strong>, inviali allo sportello e <strong>risparmia tempo!</strong>
+					</div>
+					<div class="start">
+						<button class="next-slide">Inizia subito</button>
 					</div>
 				</div>
 			</div>
 			<script>
 				$(document).ready(function() {
 					calcSize();
+					$('.start').click(function() {
+						window.location = "scan";
+					})
 				})
 			</script>	
 	</body>
