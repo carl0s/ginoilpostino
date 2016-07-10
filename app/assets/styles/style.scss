@@ -91,6 +91,109 @@ $light-grey: #CCC;
   border-bottom: 1px dashed $blue;
 }
 
+.sending {
+  font-size: 1em !important;
+  .recipient {
+    padding:10px;
+    background:#EFEFEF;
+    .separator {
+      margin-bottom:40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .sender {
+    padding:10px;
+    background:#FFFFFF;
+    .separator {
+      margin-bottom:40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .form-item {
+    width:300px;
+    max-height: 100px;
+    float:left;
+    margin-right:20px;
+    font-size: 1em;
+
+    &.small {
+      width:90px;
+
+      label,
+      input {
+        width:90px;
+      }
+    }
+    label {
+      width:200px;
+      font-size: 14px;
+      line-height: 14px;
+      height: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    input.text_input {
+      color: $blue;
+      font-size: 24px;
+      &::-webkit-input-placeholder {
+        color: $mild-grey!important;
+      }
+      &::-moz-input-placeholder {
+        color: $mild-grey!important;
+        opacity: 1;
+      }
+    }
+  }
+}
+.added-services {
+  width:75%;
+  margin:10px auto;
+
+  .service {
+    background:$yellow;
+    width:45%;
+    height: 120px;
+    float: left;
+    margin-right:20px;
+    margin-bottom:20px;
+    @include transition(.2s);
+    h3 {
+      text-align: left;
+      padding: 20px;
+      margin:0;
+      text-transform: none !important;
+      font-weight: 700 !important; 
+    }
+    &.active {
+      background:white;
+      border:2px solid $blue;
+    }
+    &:hover {
+      background:$light-grey;
+      color: $blue;
+    }
+  }
+
+  .rr {
+    background:url(../images/ricevuta.png) $yellow  bottom right no-repeat;
+  }
+
+  .check {
+    background:url(../images/contrassegno.png)  $yellow bottom right no-repeat;
+  }
+
+  .assicurata {
+    background:url(../images/assicurata.png) $yellow  bottom right no-repeat;
+  }
+}
+
+
 /* drop-down list / text element */
 .nl-field ul {
   position: absolute;
@@ -424,6 +527,14 @@ a:active {
       transform: scale(0);
       opacity: 0;
       z-index:0;
+    }
+
+    h3 {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: 700;
+      color: $blue;
     }
   }
 

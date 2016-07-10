@@ -162,6 +162,8 @@
 					var selectedopt = this.optionsList.children[ this.selectedIdx ];
 					selectedopt.className = '';
 					$('footer.slide-1').find('button').attr('data-type', this.elOriginal.children[ this.selectedIdx ].dataset.type);
+					$('footer.slide-7').find('button').attr('data-size',this.elOriginal.children[ this.selectedIdx ].dataset.size);
+					$('footer.slide-7').find('button').attr('data-weight',this.elOriginal.children[ this.selectedIdx ].dataset.weight);
 					opt.className = 'nl-dd-checked';
 					opt.dataset.price = this.elOriginal.children[ this.selectedIdx ].dataset.price;
 					if(this.elOriginal.dataset.service === 'shipping') {

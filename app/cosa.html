@@ -10,7 +10,7 @@
 		<meta name="author" content="Team #keeppushing" />
 		<link rel="shortcut icon" href="../favicon.ico"> 
 		<link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
-		<script src="js/modernizr.custom.js"></script>
+		<script src="dist/scripts/modernizr.custom.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 	</head>
 	<body class="nl-blurred">
@@ -68,7 +68,7 @@
 				<div class="main clearfix">
 					<form id="nl-step-2" class="nl-form">
 						<section class="choice">Hai scelto Lettera / Busta</section>
-						Vorrei che sia consegnata <br> in
+						Vorrei che sia<br>consegnata in
 						<select id="envelope-options">
 							<option value="0" selected>(giorni)</option>
 							<option value="1_4">1 / 4 giorni</option>
@@ -81,7 +81,7 @@
 				<footer class="slide-2">
 					<div class=""></div>
 					<div class="next">
-						<button class="next-slide hidden">Avanti</button>
+						<button class="next-slide dimensions hidden">Avanti</button>
 					</div>
 				</footer>
 			</div><!-- /container -->
@@ -151,17 +151,19 @@
 				<div class="main clearfix">
 					<form id="nl-step-6" class="nl-form">
 						<section class="choice">Hai scelto lettera/busta consegnata in 1 / 4 giorni</section>
-						Le dimensioni e il peso <br> della mia lettera sono
+						Le dimensioni e il peso massimi <br> della mia lettera sono
 						<select id="size-options">
-							<option value="1" selected>Max 250mm x 253mm x 25mm</option>
-							<option value="2">Max 250mm x 253mm x 50mm</option>
+							<option data-size="0" value="0">Alt./Larg./Spessore</option>
+							<option data-size="1" value="1">250mm/253mm/25mm</option>
+							<option data-size="2" value="2">250mm/253mm/50mm</option>
 						</select>
 						<br>
 						e il suo peso
 						<select id="weight-options">
-							<option value="1" selected>0 g - 100 g</option>
-							<option value="2">100 g - 500 g</option>
-							<option value="3">500 g - 2 KG</option>
+							<option data-weight="0" value="0">in grammi</option>
+							<option data-weight="1" value="1">0 g - 100 g</option>
+							<option data-weight="2" value="2">100 g - 500 g</option>
+							<option data-weight="3" value="3">500 g - 2 KG</option>
 						</select>
 
 						<div class="nl-overlay"></div>
@@ -169,11 +171,140 @@
 				</div>
 				<footer class="slide-6">
 					<div class="next">
-						<button class="next-slide">Avanti</button>
+						<button class="next-slide calculate">Calcola prezzo</button>
+					</div>
+				</footer>
+			</div><!-- /container -->
+			<div class="slide-7 price slide clearfix">
+				<!-- Top Navigation -->
+				<div class="main clearfix">
+					<div class="total">
+						<h3>
+						Hai scelto di inviare una lettera / busta in Italia,<br> 
+						consegnata in 1 /4 giorni<br>
+						</h3>
+						<h3>
+						Il prezzo da pagare per le dimensioni e peso sarà di <span>6.50</span> €
+						</h3>
+					</div>
+				</div>
+				<footer class="slide-7">
+					<div class="next">
+						<button class="next-slide add-services">Avanti</button>
+					</div>
+				</footer>
+			</div><!-- /container -->
+			<div class="slide-8 add-services slide clearfix">
+				<!-- Top Navigation -->
+				<div class="main clearfix">
+					<div class="added-services">
+						<div class="service rr">
+							<h3>Ricevuta di ritorno</h3>
+						</div>
+						<div class="service check">
+							<h3>Contrassegno</h3>
+						</div>
+						<div class="service assicurata">
+							<h3>Assicurata</h3>
+						</div>
+						<div class="service no_service">
+							<h3>Nessun servizio</h3>
+						</div>
+					</div>
+				</div>
+				<footer class="slide-8">
+					<div class="next">
+						<button class="next-slide fill-in">Compila i dati</button>
+					</div>
+				</footer>
+			</div><!-- /container -->
+			<div class="slide-9 slide fill-data clearfix">
+				<!-- Top Navigation -->
+				<div class="main clearfix">
+					<form class="nl-form sending">
+						<h3>Indirizzo del destinatario</h3>
+						<div class="recipient clearfix">
+							<div class="clearfix separator">
+								<div class="form-item">
+									<label for="destinatario">Destinatario</label>
+									<input class="text_input" name="destinatario" placeholder="Destinatario" value="" type="text">
+								</div>
+								<div class="form-item">
+									<label for="address">Indirizzo</label>
+									<input class="text_input" name="address" placeholder="Via / Piazza" value="" type="text">
+								</div>
+								<div class="form-item small">
+									<label for="n_civ">N° Civ.</label>
+									<input class="text_input" name="n_civ" placeholder="N° Civ." value="" type="text">
+								</div>
+							</div>
+							<div class="clearfix separator">
+								<div class="form-item small">
+									<label for="cap">C.A.P.</label>
+									<input class="text_input" name="cap" placeholder="C.A.P." value="" type="text">
+								</div>
+								<div class="form-item">
+									<label for="city">Indirizzo</label>
+									<input class="text_input" name="city" placeholder="Comune" value="" type="text">
+								</div>
+								<div class="form-item small">
+									<label for="prov">Prov.</label>
+									<input class="text_input" name="prov" placeholder="Prov." value="" type="text">
+								</div>
+							</div>
+						</div>
+					</form>
+					<form class="nl-form sending">
+						<h3>Indirizzo del mittente (stesso indirizzo per la ricevuta di rit</h3>
+						<div class="sender clearfix">
+							<div class="clearfix separator">
+								<div class="form-item">
+									<label for="destinatario">Destinatario</label>
+									<input class="text_input" name="destinatario" placeholder="Destinatario" value="" type="text">
+								</div>
+								<div class="form-item">
+									<label for="address">Indirizzo</label>
+									<input class="text_input" name="address" placeholder="Via / Piazza" value="" type="text">
+								</div>
+								<div class="form-item small">
+									<label for="n_civ">N° Civ.</label>
+									<input class="text_input" name="n_civ" placeholder="N° Civ." value="" type="text">
+								</div>
+							</div>
+							<div class="clearfix separator">
+								<div class="form-item small">
+									<label for="cap">C.A.P.</label>
+									<input class="text_input" name="cap" placeholder="C.A.P." value="" type="text">
+								</div>
+								<div class="form-item">
+									<label for="city">Indirizzo</label>
+									<input class="text_input" name="city" placeholder="Comune" value="" type="text">
+								</div>
+								<div class="form-item small">
+									<label for="prov">Prov.</label>
+									<input class="text_input" name="prov" placeholder="Prov." value="" type="text">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<footer class="slide-9">
+					<div class="next">
+						<button class="next-slide thanks">Invia a sportello</button>
 					</div>
 				</footer>
 			</div><!-- /container -->
 
+			<div class="slide-10 slide thanks clearfix">
+				<!-- Top Navigation -->
+				<div class="main clearfix">
+					<h2>Grazie!</h2>
+					<h3>Abbiamo preso in carico la tua richiesta.</h3>
+
+					<h4>L'operatore dello sportello Fast, ti riceverà con il numero fra <strong>3 minuti</strong></h4>
+				</div>
+
+			</div><!-- /container -->
 		</div>
 		<script src="dist/scripts/nlform.js"></script>
 		<script>
@@ -189,9 +320,60 @@
 				$('.next-slide').click(function() {
 					$('.slide').removeClass('inactive');
 					$('.active').removeClass('active').addClass('inactive');
-					$('.' + $(this).data('type')).addClass('active');
-				})
-			})
+					if($(this).data('type') != 'none') {
+						$('.' + $(this).data('type')).addClass('active');
+					} else {
+						$('.envelope').addClass('active');
+					}
+					
+				});
+
+				$('.dimensions').click(function() {
+					$('.slide').removeClass('inactive');
+					$('.active').removeClass('active').addClass('inactive');
+					$('.slide-6').addClass('active');
+				});
+
+				$('.calculate').click(function() {
+					$('.slide').removeClass('inactive');
+					$('.active').removeClass('active').addClass('inactive');
+					$('.price').addClass('active');
+				});
+
+				$('.add-services').click(function() {
+					$('.slide').removeClass('inactive');
+					$('.active').removeClass('active').addClass('inactive');
+					$('.add-services').addClass('active');
+				});
+
+				$('.thanks').click(function() {
+					$('.slide').removeClass('inactive');
+					$('.active').removeClass('active').addClass('inactive');
+					$('.thanks').addClass('active');
+				});
+
+
+
+				$('.service').click(function() {
+					$('.service').removeClass('active');
+					$(this).addClass('active');
+				});
+
+				$('.fill-in').click(function() {
+					$('.slide').removeClass('inactive');
+					$('.active').removeClass('active').addClass('inactive');
+					$('.fill-data').addClass('active');
+				});
+			});
+
+			function calcSize() {
+			  var height_screen = $(window).height();
+			  var height_header = $('header').outerHeight();
+			 	$(".container").css({ "height": height_screen - height_header });
+			 	$(".slide").css({ "height": height_screen - height_header });
+			}
+
+			calcSize();
 		</script>
 	</body>
 </html>
