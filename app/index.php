@@ -259,7 +259,7 @@ INIZIA ORA
     <script language="JavaScript">
 
     var next = function(){
-window.location.href ='./cosa?u='+$('#fila').val;
+window.location.href ='./cosa?u='+$('#fila').val();
 
 
     }
@@ -411,7 +411,6 @@ window.location.href ='./cosa?u='+$('#fila').val;
  
  
 <input type="hidden" id="fila">
-
 <input type="hidden" id="photo">
 <input type="hidden" id="v">
 
