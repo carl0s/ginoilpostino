@@ -195,7 +195,8 @@ background-color: #999;
     </header>
   <div class="camera" style="position:absolute; width:100%; transition: 1s; background-color:#fff; z-index:101">
   <div style="position:absolute; top:0; right:40px; width: 500px;text-align: right;">
-  	<p style="margin-top: 0px;font-size: 4em;">SCANNERIZZA IL TUO NUMERINO</p>
+  	<p style="margin-top: 0px;font-size: 4em; margin:0">MOSTRA IL TUO TICKET ALLA CAMERA</p>
+  	<p style="margin-top: 0px;font-size: 2em;">E CLICCA AVANTI</p>
 
   	<p style="margin-top: -20px;font-size: 2em; color:#ff867d; display:none; font-weight: 700;" id="riprova">RIPROVA</p>
 
@@ -220,7 +221,7 @@ background-color: #999;
   <div class="rect17"></div>  
 </div>
 <button class="next-slide" style="bottom:0" onClick="postphoto()">
-CHECK
+AVANTI
 </button>
     <div id="my_camera" style="width:640px; height:240px; margin: 20px 20px;"></div>
 	<!---<div class="overlay" style="top: calc(50% - 120px);left: calc(50% - 160px);">
@@ -247,10 +248,12 @@ CHECK
 <p id="utenti"></p>
 </div>
   <div style="position:absolute; top:0; right:40px; width: 500px;text-align: right; margin-top:20px">
-  	<p style="margin-top: 0px;font-size: 4em;">QUALCOSA MARKETTARO _ BLA BLA BLA ! DAJE</p>
+  	<p style="margin-top: 0px;font-size: 4em;">SCANSIONE CORRETTA</p>
+  	<p style="margin-top: 0px;font-size: 2em;">SE COMPILERAI DEI MODULI SARANNO COLLEGATI A QUESTO TICKET</p>
+
   </div>
 <button class="next-slide" style="bottom:0" onClick="javascript:window.location.href ='./cosa'">
-CONTINUA
+INIZIA ORA
 </button>
 </div>
     <script language="JavaScript">
