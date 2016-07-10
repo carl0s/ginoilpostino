@@ -26,9 +26,9 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Gino il Postino - Servizi al Cittadino</title>
-    <meta name="description" content="Gino il Postino - Servizi al Cittadino" />
-    <meta name="keywords" content="Gino il Postino - Servizi al Cittadino" />
+    <title>PosteChiare - Amicizia lunga</title>
+    <meta name="description" content="PosteChiare - Amicizia lunga" />
+    <meta name="keywords" content="PosteChiare - Amicizia lunga" />
     <meta name="author" content="Team #keeppushing" />
     <link rel="shortcut icon" href="../favicon.ico"> 
     <link rel="stylesheet" type="text/css" href="dist/styles/app.css" />
@@ -183,7 +183,7 @@ background-color: #999;
   <div class="container demo-1">
     <!-- Top Navigation -->
     <header>
-      <h1>Benvenuto a Gino il Postino</h1>
+      <h1>PosteChiare</h1>
       <div class="flag">
         <div class="flag-item" data-lang="it"><img src="dist/images/italy.svg"></div>
         <div class="flag-item" data-lang="de"><img src="dist/images/italy.svg"></div>

@@ -193,6 +193,24 @@ $light-grey: #CCC;
   }
 }
 
+.content {
+  margin-top:0;
+  background:url('../images/cover.jpg') no-repeat top right;
+  width:100%;
+  .left {
+    width:45%;
+    float: left;
+    padding:20px;
+    h2 {
+      font-size: 42px;
+      color: $blue;
+    }
+    .text {
+      color: $dark-grey;
+    }
+  }
+}
+
 
 /* drop-down list / text element */
 .nl-field ul {
