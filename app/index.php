@@ -252,11 +252,17 @@ AVANTI
   	<p style="margin-top: 0px;font-size: 2em;">SE COMPILERAI DEI MODULI SARANNO COLLEGATI A QUESTO TICKET</p>
 
   </div>
-<button class="next-slide" style="bottom:0" onClick="javascript:window.location.href ='./cosa'">
+<button class="next-slide" style="bottom:0" onClick="next();">
 INIZIA ORA
 </button>
 </div>
     <script language="JavaScript">
+
+    var next = function(){
+window.location.href ='./cosa?u='+$('#fila').val;
+
+
+    }
 	
 	Webcam.set({
         width: 640,
@@ -332,6 +338,7 @@ INIZIA ORA
 				var u = x - 1;
 				var b = data.responses[0].textAnnotations[u].description
 				console.log('Utenti attesa: ' + b);
+				$('#fila').val(b);
 				
 				 var today = new Date();
     var dd = today.getDate();
@@ -403,6 +410,7 @@ INIZIA ORA
  <!--<a href="javascript:void(take_snapshot())">Take Snapshot</a>-->
  
  
+<input type="hidden" id="fila">
 
 <input type="hidden" id="photo">
 <input type="hidden" id="v">

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?
+
+$x = $_GET['u'];
+
+ ?>
 <html lang="en" class="no-js">
 	<head>
 		<meta charset="UTF-8" />
@@ -284,7 +289,7 @@
 				</div>
 				<footer class="slide-8">
 					<div class="next">
-						<button class="next-slide thanks">Invia a sportello</button>
+						<button class="next-slide thanks-button">Invia a sportello</button>
 					</div>
 				</footer>
 			</div><!-- /container -->
@@ -294,7 +299,7 @@
 				<div class="main thanks clearfix">
 					<h1>Dati inviati correttamente!</h1>
 					<h3>Abbiamo preso in carico la tua richiesta.</h3>
-					<h4>L'operatore dello sportello, ti riceverà non appena sarà il tuo turno.</strong></h4>
+					<h4>Hai <?echo $x;?> persone davanti. Gino, l'operatore dello sportello Fast, ti riceverà con il numero fra <strong>3 minuti</strong></h4>
 					<p>
 					Approfitta di questi minuti per scoprire le fantastiche offerte di Poste Italiane per proteggere te, la tua famiglia e il tuo futuro.<br>
 					Bastano poche risposte!</p>
