@@ -36,17 +36,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <script src="dist/scripts/webcamjs/webcam.js" type="text/javascript"></script>
     <script src="dist/scripts/trackingjs/build/tracking.js" type="text/javascript"></script>
 
-    <style>
-  .rect {
-    width: 80px;
-    height: 80px;
-    position: absolute;
-    left: -1000px;
-    top: -1000px;
-  }
-  </style>
-
-</head>
+   </head>
 
 <body class="nl-blurred">
   <div class="container demo-1">
@@ -63,16 +53,22 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
       </div>
     </header>
   <div class="camera">
-  		<div id="sel"></div>
+  <div style="position:absolute; top:0; right:40px; width: 500px;text-align: right;">
+  	<p style="margin-top: -20px;font-size: 4em;">SCANNERIZZA IL TUO NUMERINO</p>
+  	<p style="margin-top: -20px;font-size: 2em; color:#ff867d; display:none" id="riprova">RIPROVA</p>
 
-    <div id="my_camera" style="width:640px; height:240px; margin: 20px auto;"></div>
-	<div class="overlay" style="top: calc(50% - 120px);left: calc(50% - 160px);">
+  </div>
+<button class="next-slide" style="bottom:0" onClick="postphoto()">
+CHECK
+</button>
+    <div id="my_camera" style="width:640px; height:240px; margin: 20px 20px;"></div>
+	<!---<div class="overlay" style="top: calc(50% - 120px);left: calc(50% - 160px);">
     	<div class="top"></div>
     	<div class="bottom"></div>
     	<div class="left"></div>
     	<div class="right"></div>
-    </div>
-    <div id="my_result" style="width:640px; height:240px;position:absolute;top: 0;left: calc(50% - 320px); z-index:5"></div>
+    </div>-->
+    <div id="my_result" style="width:640px; height:240px;position:absolute;top: 0;left: 20px; z-index:5"></div>
   </div>
     <script language="JavaScript">
 	
@@ -102,11 +98,7 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 		
 	
 	var postphoto = function(){
-	var h ='';
-	var n='';
-	var b='';
-	var servizio = '';
-	var today = '';
+	
 	take_snapshot();
 	var x = $('#photo').val();
 	var p = new Object;
@@ -118,6 +110,11 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
             data: post,
             dataType: 'json',
             success: function(data,status){
+            	var h ='';
+	var n='';
+	var b='';
+	var servizio = '';
+	var today = '';
                 console.log(data);
 				console.log(data.responses[0].textAnnotations.length)
 				var x = data.responses[0].textAnnotations.length;
@@ -175,11 +172,16 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
 					servizio = 'P'
 					}		
 				console.log(servizio);
-			if(h !=='' && n !=='' && b !=='' && servizio !=='' && today !==''){console.log('DAICAZZO');}else{console.log('FANCULO');}
+			if(h !=='' && n !=='' && b !=='' && servizio !=='' && today !==''){console.log('DAICAZZO');}else{
+				$('img').removeAttr('src');
+				$('#riprova').show();
+				console.log('FANCULO');}
 
             },
 			error: function(e) {
 				console.log(e);
+$('img').removeAttr('src');
+				$('#riprova').show();
 			}
        });
 		
@@ -191,10 +193,11 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     </script>
 
  <!--<a href="javascript:void(take_snapshot())">Take Snapshot</a>-->
+ 
+ 
+
 <input type="hidden" id="photo">
 <input type="hidden" id="v">
-<button class="next-slide" style="text-align:center; background-color:#0047bb; width: 640px; height:60px; line-height:60px; margin:auto; " onClick="postphoto()">
-CHECK
-</button>
+
 </body>
 </html>
