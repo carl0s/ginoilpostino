@@ -35,7 +35,6 @@ $upload_url = CloudStorageTools::createUploadUrl('/process.php', $options);
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
     <script src="dist/scripts/modernizr.custom.js"></script>
     <script src="dist/scripts/webcamjs/webcam.js" type="text/javascript"></script>
-    <script src="dist/scripts/trackingjs/build/tracking.js" type="text/javascript"></script>
 <style>
 .spinner {
   width: 400px;
@@ -250,7 +249,7 @@ CHECK
   <div style="position:absolute; top:0; right:40px; width: 500px;text-align: right; margin-top:20px">
   	<p style="margin-top: 0px;font-size: 4em;">QUALCOSA MARKETTARO _ BLA BLA BLA ! DAJE</p>
   </div>
-<button class="next-slide" style="bottom:0" onClick="javascript:window.location.href ='./cosa.html'">
+<button class="next-slide" style="bottom:0" onClick="javascript:window.location.href ='./cosa'">
 CONTINUA
 </button>
 </div>

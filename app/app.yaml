@@ -25,12 +25,15 @@ handlers:
   static_dir: dist
 
 - url: /
+  script: index.html
+
+- url: /scan
   script: index.php
 
 - url: /process.php
   script: process.php
 
-- url: /cosa.html
+- url: /cosa
   script: cosa.html
 
 - url: /api.php
