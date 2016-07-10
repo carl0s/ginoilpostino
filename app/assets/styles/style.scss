@@ -538,6 +538,15 @@ a:active {
     }
   }
 
+  .thanks {
+    text-align: center;
+    h1 {
+      font-size: 42px;
+      color: $blue;
+      text-transform: uppercase;
+    }
+  }
+
 }
 
 /* Header Style */
